@@ -27,7 +27,7 @@
                                placeholder="0"></el-input-number>
             </el-form-item>
             <el-form-item>
-              <el-switch v-model="form.switch"></el-switch>
+              <el-switch v-model="item.switch"></el-switch>
             </el-form-item>
             <el-form-item>
               <el-color-picker v-model="item.color"></el-color-picker>
@@ -99,6 +99,8 @@
             <th>Длина</th>
             <th>Ширина</th>
             <th>Высота</th>
+            <th>Переключатель</th>
+            <th>Цвет</th>
             <th>Цех</th>
           </tr>
           </thead>
@@ -109,6 +111,8 @@
             <td>{{item.length}}</td>
             <td>{{item.width}}</td>
             <td>{{item.height}}</td>
+            <td>{{item.switch == true ? 'Включен' : 'Выключен' }}</td>
+            <td>{{item.color}}</td>
             <td>{{shopOptions[item.shop].label}}</td>
           </tr>
           </tbody>
