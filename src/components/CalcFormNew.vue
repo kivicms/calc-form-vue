@@ -175,6 +175,9 @@
         showResult: false
       }
     },
+    created () {
+      this.items = JSON.parse(localStorage.getItem('items'))
+    },
     methods: {
       recalcNumber () {
         for (let i = 0; i < this.items.length; i++) {
@@ -200,6 +203,7 @@
       removeItem (item) {
         this.items.splice(item, 1)
         this.recalcNumber()
+        this.$store.commit('update', this.items)
       },
       saveButton () {
         if (this.items.length === 0) {

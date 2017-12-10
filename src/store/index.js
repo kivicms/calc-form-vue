@@ -10,6 +10,7 @@ export default new Vuex.Store({
   mutations: {
     update (state, items) {
       state.items = items
+      localStorage.setItem('items', JSON.stringify(items))
     }
   }
 })
