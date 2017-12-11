@@ -180,7 +180,9 @@
       }
     },
     created () {
-      this.items = JSON.parse(localStorage.getItem('items'))
+      if (localStorage.getItem('items') !== null) {
+        this.items = JSON.parse(localStorage.getItem('items'))
+      }
     },
     methods: {
       recalcNumber () {
